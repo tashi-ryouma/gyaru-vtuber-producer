@@ -1,0 +1,2 @@
+import { imagePrompts } from '@/data/imagePrompts';
+export default function Gallery(){return <main className='p-6'><a href='/' className='text-pink-300'>←戻る</a><h1 className='text-2xl'>ギャラリー</h1><div className='grid md:grid-cols-4 gap-3 mt-4'>{Object.keys(imagePrompts).map(k=><div key={k} className='card p-2'><img src={`/generated/${k}.png`} onError={(e)=>((e.currentTarget.src='/placeholders/base.svg'))}/><p className='text-xs'>{k}</p></div>)}</div></main>}
